@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header header-modern">
 
 	<a href="#" class="logo logo-usuario">
 
@@ -6,13 +6,13 @@
 			<?php echo strtoupper($_SESSION["nombre"]); ?>
 
 			<small class="usuario-status">
-				<i class="fa fa-circle text-success"></i> EN SESIÓN
+				<i class="fa fa-circle"></i> EN SESIÓN
 			</small>
 		</span>
 
 	</a>
 
-	<nav class="navbar navbar-static-top" role="navigation">
+	<nav class="navbar navbar-static-top navbar-modern" role="navigation">
 
 		<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
 			<span class="sr-only">Toggle navigation</span>
@@ -23,58 +23,66 @@
 </header>
 
 <style>
-	@media (min-width:200px) {
-		.logo-lg img {
-			padding: 3px 50px 10px 50px;
-		}
+	/* ===== HEADER GENERAL ===== */
+	.header-modern {
+		background: linear-gradient(90deg, #00c6ff, #0072ff) !important;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 	}
 
-	@media (min-width:1025px) {
-		.logo-lg img {
-			padding: 10px 10px 0px 10px;
-		}
+	/* ===== NAVBAR ===== */
+	.navbar-modern {
+		background: transparent !important;
+		border: none !important;
 	}
 
+	/* ===== LOGO USUARIO ===== */
 	.logo-usuario {
-		background-color: #1f2d3d !important;
+		background: transparent !important;
 		color: #ffffff !important;
-
 		height: 50px !important;
 		padding: 0 !important;
-
 		display: flex !important;
 		align-items: center !important;
-		/* centra vertical */
 		justify-content: center !important;
-		/* centra horizontal */
-
-		line-height: normal !important;
-		/* elimina el line-height heredado */
 	}
 
-	.logo-usuario .logo-lg {
+	/* ===== TEXTO USUARIO ===== */
+	.usuario-header {
+		font-weight: 700;
+		font-size: 14px;
+		letter-spacing: 1px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 		line-height: 1.1;
-		margin: 0 !important;
 	}
 
-	.usuario-header {
-		font-weight: 700;
-		font-size: 13px;
-		letter-spacing: 1px;
-	}
-
+	/* ===== STATUS ===== */
 	.usuario-status {
-		font-size: 10px;
-		margin-top: 2px;
-		color: #b8c7ce;
+		font-size: 11px;
+		margin-top: 3px;
+		color: rgba(255, 255, 255, 0.85);
 	}
 
 	.usuario-status i {
-		font-size: 7px;
-		margin-right: 3px;
+		font-size: 8px;
+		margin-right: 4px;
+		color: #00ff90;
+	}
+
+	/* ===== SIDEBAR TOGGLE ===== */
+	.sidebar-toggle {
+		color: white !important;
+	}
+
+	.sidebar-toggle:hover {
+		background: rgba(255, 255, 255, 0.15) !important;
+	}
+
+	/* ===== RESPONSIVE ===== */
+	@media (max-width: 768px) {
+		.usuario-header {
+			font-size: 12px;
+		}
 	}
 </style>

@@ -72,8 +72,14 @@ session_start();
       $ruta = $_GET["ruta"];
 
       // GENERAL
-      $paginasGenerales = ["salir", "inicio", "actualizacionDatos"];
-
+      $paginasGenerales = [
+        "salir",
+        "inicio",
+        "usuario",
+        "actualizacionDatos",
+        "producto",
+        "categoria"
+        ];
 
       if (in_array($ruta, $paginasGenerales)) {
         include "modulos/$ruta.php";
