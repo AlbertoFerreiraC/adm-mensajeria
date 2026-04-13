@@ -68,7 +68,6 @@ function cargarDatosTabla() {
                     '<td>' + response[i].codigo + '</td>' +
                     '<td>' + response[i].descripcion + '</td>' +
                     '<td>Gs. ' + parseFloat(response[i].precio_lista).toLocaleString() + '</td>' +
-                    '<td>' + response[i].existencia + '</td>' +
                     '<td>' + estadoBadge + '</td>' +
                     '<td>' +
                     '<div class="btn-group">' +

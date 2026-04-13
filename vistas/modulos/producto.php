@@ -40,7 +40,6 @@
                                 <th>Código</th>
                                 <th>Descripción</th>
                                 <th>Precio</th>
-                                <th>Stock</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
