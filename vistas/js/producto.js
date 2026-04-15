@@ -65,7 +65,6 @@ function cargarDatosTabla() {
                 fila += '<tr>' +
                     '<td>' + (parseInt(i) + 1) + '</td>' +
                     '<td><img src="' + response[i].url_imagen + '" style="width:60px;border-radius:8px;"></td>' +
-                    '<td>' + response[i].codigo + '</td>' +
                     '<td>' + response[i].descripcion + '</td>' +
                     '<td>Gs. ' + parseFloat(response[i].precio_lista).toLocaleString() + '</td>' +
                     '<td>' + estadoBadge + '</td>' +
@@ -197,12 +196,8 @@ function obtenerDatosParaModificar(id) {
 
                 $("#idModificar").val(producto.id);
                 $("#categoriaModificar").val(producto.categoria);
-                $("#tipo_productoModificar").val(producto.tipo_producto);
-                $("#codigoModificar").val(producto.codigo);
                 $("#descripcionModificar").val(producto.descripcion);
                 $("#precio_listaModificar").val(producto.precio_lista);
-                $("#existenciaModificar").val(producto.existencia);
-                $("#estadoModificar").val(producto.estado);
 
                 $("#previewModificar").attr("src", producto.url_imagen);
             }

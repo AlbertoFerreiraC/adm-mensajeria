@@ -112,8 +112,7 @@ function agregarUsuario() {
     url: "../api-mensajeria/usuario/funAgregar.php",
     method: "POST",
     data: {
-      nombreAgregar: $("input[name='nombreAgregar']").val(),
-      estadoAgregar: $("select[name='estadoAgregar']").val()
+      nombreAgregar: $("input[name='nombreAgregar']").val()
     },
     dataType: "json",
     success: function (response) {
@@ -155,7 +154,6 @@ function obtenerUsuario(id) {
 
       $("#idUsuarioModificar").val(usuario.idusuario);
       $("#nombreModificar").val(usuario.nombre);
-      $("#estadoModificar").val(usuario.estado);
 
     }
   }).fail(function () {
@@ -174,8 +172,7 @@ function modificarUsuario() {
     method: "POST",
     data: {
       idModificar: $("#idUsuarioModificar").val(),
-      nombreModificar: $("#nombreModificar").val(),
-      estadoModificar: $("#estadoModificar").val()
+      nombreModificar: $("#nombreModificar").val()
     },
     dataType: "json",
     success: function (response) {

@@ -123,17 +123,6 @@ MODAL MODIFICAR
                             id="descripcionModificar"
                             required>
                     </div>
-
-                    <div class="form-group">
-                        <label>Estado</label>
-                        <select class="form-control input-dark"
-                            name="estadoModificar"
-                            id="estadoModificar">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
-                    </div>
-
                 </div>
 
                 <div class="modal-footer">

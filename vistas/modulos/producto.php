@@ -21,9 +21,7 @@
                 </div>
 
                 <div class="form-group col-sm-9 col-xs-12">
-                    <input type="text"
-                        class="form-control input-dark"
-                        placeholder="Filtrado General..."
+                    <input type="text" class="form-control input-dark" placeholder="Filtrado General..."
                         id="filtradoDinamico">
                 </div>
 
@@ -37,7 +35,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>Imagen</th>
-                                <th>Código</th>
                                 <th>Descripción</th>
                                 <th>Precio</th>
                                 <th>Estado</th>
@@ -76,21 +73,8 @@ MODAL AGREGAR PRODUCTO
 
                     <div class="form-group col-md-6">
                         <label>Categoría</label>
-                        <select id="categoriaAgregar"
-                            class="form-control input-dark"
-                            name="categoria"
-                            required>
+                        <select id="categoriaAgregar" class="form-control input-dark" name="categoria" required>
                         </select>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Tipo Producto</label>
-                        <input type="text" class="form-control input-dark" name="tipo_producto" required>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Código</label>
-                        <input type="text" class="form-control input-dark" name="codigo" required>
                     </div>
 
                     <div class="form-group col-md-6">
@@ -104,30 +88,12 @@ MODAL AGREGAR PRODUCTO
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label>Existencia</label>
-                        <input type="number" class="form-control input-dark" name="existencia" required>
-                    </div>
-
-                    <div class="form-group col-md-6">
                         <label>Imagen</label>
-                        <input type="file"
-                            class="form-control input-dark"
-                            name="imagen"
-                            id="imagenAgregar"
-                            accept="image/*"
-                            required>
+                        <input type="file" class="form-control input-dark" name="imagen" id="imagenAgregar"
+                            accept="image/*" required>
 
                         <br>
-                        <img id="previewAgregar"
-                            style="width:100%; max-height:200px; display:none; border-radius:10px;">
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Estado</label>
-                        <select class="form-control input-dark" name="estado">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
+                        <img id="previewAgregar" class="img-preview">
                     </div>
 
                 </div>
@@ -167,82 +133,31 @@ MODAL MODIFICAR PRODUCTO
 
                     <div class="form-group col-md-6">
                         <label>Categoría</label>
-                        <select id="categoriaModificar"
-                                class="form-control input-dark"
-                                name="categoriaModificar"
-                                required>
+                        <select id="categoriaModificar" class="form-control input-dark" name="categoriaModificar"
+                            required>
                         </select>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Tipo Producto</label>
-                        <input type="text"
-                               class="form-control input-dark"
-                               name="tipo_productoModificar"
-                               id="tipo_productoModificar"
-                               required>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Código</label>
-                        <input type="text"
-                               class="form-control input-dark"
-                               name="codigoModificar"
-                               id="codigoModificar"
-                               required>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Descripción</label>
-                        <input type="text"
-                               class="form-control input-dark"
-                               name="descripcionModificar"
-                               id="descripcionModificar"
-                               required>
+                        <input type="text" class="form-control input-dark" name="descripcionModificar"
+                            id="descripcionModificar" required>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Precio Lista</label>
-                        <input type="number"
-                               step="0.01"
-                               class="form-control input-dark"
-                               name="precio_listaModificar"
-                               id="precio_listaModificar"
-                               required>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Existencia</label>
-                        <input type="number"
-                               class="form-control input-dark"
-                               name="existenciaModificar"
-                               id="existenciaModificar"
-                               required>
+                        <input type="number" step="0.01" class="form-control input-dark" name="precio_listaModificar"
+                            id="precio_listaModificar" required>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Cambiar Imagen (opcional)</label>
-                        <input type="file"
-                               class="form-control input-dark"
-                               name="imagenModificar"
-                               id="imagenModificar"
-                               accept="image/*">
+                        <input type="file" class="form-control input-dark" name="imagenModificar" id="imagenModificar"
+                            accept="image/*">
 
                         <br>
-                        <img id="previewModificar"
-                             style="width:100%; max-height:200px; border-radius:10px;">
+                        <img id="previewModificar" style="width:100%; max-height:200px; border-radius:10px;">
                     </div>
-
-                    <div class="form-group col-md-6">
-                        <label>Estado</label>
-                        <select class="form-control input-dark"
-                                name="estadoModificar"
-                                id="estadoModificar">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
-                    </div>
-
                 </div>
 
                 <div class="modal-footer">
@@ -345,8 +260,17 @@ ESTILOS
     .content-header .breadcrumb>li+li:before {
         color: #ffffff;
     }
-</style>
 
+    .img-preview {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        border-radius: 10px;
+        background: #f1f1f1;
+        padding: 5px;
+        display: none;
+    }
+</style>
 
 
 <!-- ==============================
@@ -354,9 +278,9 @@ SCRIPT PREVIEW IMAGEN
 =================================-->
 
 <script>
-    document.getElementById("imagenAgregar").addEventListener("change", function(e) {
+    document.getElementById("imagenAgregar").addEventListener("change", function (e) {
         let reader = new FileReader();
-        reader.onload = function() {
+        reader.onload = function () {
             let preview = document.getElementById("previewAgregar");
             preview.src = reader.result;
             preview.style.display = "block";
@@ -366,13 +290,13 @@ SCRIPT PREVIEW IMAGEN
 </script>
 
 <script>
-document.getElementById("imagenModificar").addEventListener("change", function(e) {
-    let reader = new FileReader();
-    reader.onload = function() {
-        document.getElementById("previewModificar").src = reader.result;
-    }
-    reader.readAsDataURL(e.target.files[0]);
-});
+    document.getElementById("imagenModificar").addEventListener("change", function (e) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById("previewModificar").src = reader.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
+    });
 </script>
 
 <script src="vistas/js/producto.js"></script>

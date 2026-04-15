@@ -147,7 +147,6 @@ function obtenerDatosParaModificar(id) {
 
             for (var i in response) {
                 $("#descripcionModificar").val(response[i].descripcion);
-                $("#estadoModificar").val(response[i].estado);
                 $("#idModificar").val(response[i].id);
             }
 
@@ -170,7 +169,6 @@ function modificarDatos() {
         method: "POST",
         data: {
             descripcionModificar: $("#descripcionModificar").val(),
-            estadoModificar: $("#estadoModificar").val(),
             idModificar: $("#idModificar").val()
         },
         dataType: "json",

@@ -86,15 +86,6 @@ MODAL AGREGAR
               name="nombreAgregar"
               required>
           </div>
-
-          <div class="form-group">
-            <label>Estado</label>
-            <select class="form-control input-dark" name="estadoAgregar">
-              <option value="activo">Activo</option>
-              <option value="inactivo">Inactivo</option>
-            </select>
-          </div>
-
           <div class="text-center">
             <small style="color:#DC3139;">
               Contraseña por defecto: 12345
@@ -145,17 +136,6 @@ MODAL MODIFICAR
               name="nombreModificar"
               required>
           </div>
-
-          <div class="form-group">
-            <label>Estado</label>
-            <select class="form-control input-dark"
-              id="estadoModificar"
-              name="estadoModificar">
-              <option value="activo">Activo</option>
-              <option value="inactivo">Inactivo</option>
-            </select>
-          </div>
-
         </div>
 
         <div class="modal-footer">

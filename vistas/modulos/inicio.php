@@ -3,8 +3,8 @@
 <div class="content-wrapper dashboard-wrapper">
 
   <section class="content-header">
-    <h1>Panel Principal</h1>
-    <p class="subtitulo">Resumen general del sistema de mensajería</p>
+    <h1>Panel de Pedidos</h1>
+    <p class="subtitulo">Gestión y seguimiento de pedidos</p>
   </section>
 
   <section class="content">
@@ -13,51 +13,90 @@
 
       <div class="dashboard-body">
 
-        <!-- ===== TARJETAS KPI ===== -->
+        <!-- ===== KPI CARDS ===== -->
         <div class="row">
 
-          <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="kpi-card kpi-blue">
               <h3 id="kpiTotal">0</h3>
-              <p>Total Conversaciones</p>
+              <p>Total</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="kpi-card kpi-yellow">
+              <h3 id="kpiPendiente">0</h3>
+              <p>Pendientes</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="kpi-card kpi-green">
-              <h3 id="kpiContactos">0</h3>
-              <p>Contactos Únicos</p>
+              <h3 id="kpiConcretado">0</h3>
+              <p>Concretados</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="kpi-card kpi-purple">
-              <h3 id="kpiHoy">0</h3>
-              <p>Conversaciones Hoy</p>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="kpi-card kpi-red">
+              <h3 id="kpiNoConcretado">0</h3>
+              <p>No concretados</p>
             </div>
           </div>
 
         </div>
 
-        <!-- ===== TABLA ===== -->
+        <div class="row" style="margin-bottom:15px;">
+
+          <div class="col-md-3">
+            <label>Estado</label>
+            <select id="filtroEstado" class="form-control">
+              <option value="pendiente">Pendiente</option>
+              <option value="concretado">Concretado</option>
+              <option value="rechazado">Rechazado</option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <label>Desde</label>
+            <input type="date" id="fechaDesde" class="form-control">
+          </div>
+
+          <div class="col-md-3">
+            <label>Hasta</label>
+            <input type="date" id="fechaHasta" class="form-control">
+          </div>
+
+          <div class="col-md-3" style="margin-top:25px;">
+            <button class="btn btn-primary btn-block" id="btnFiltrar">
+              Filtrar
+            </button>
+          </div>
+
+        </div>
+
         <div class="tabla-container">
-          <h4>Últimas Conversaciones</h4>
+
+          <h4>Listado de Pedidos</h4>
 
           <div class="table-responsive">
-            <table id="tablaConversaciones" class="tabla-modern">
+            <table id="tablaPedidos" class="tabla-modern">
               <thead>
                 <tr>
-                  <th>Fecha</th>
+                  <th>Fecha Lev.</th>
+                  <th>Fecha Proc.</th>
+                  <th>N° Contacto</th>
                   <th>Contacto</th>
-                  <th>Número</th>
-                  <th>Entrada</th>
-                  <th>Respuesta</th>
-                  <th>Secuencia</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Estado</th>
+                  <th>Acción</th>
                 </tr>
               </thead>
               <tbody></tbody>
             </table>
           </div>
+
         </div>
 
       </div>
@@ -66,6 +105,45 @@
 
   </section>
 
+</div>
+
+<div id="modalEstado" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Actualizar Estado</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <input type="hidden" id="idPedido">
+
+        <div class="form-group">
+          <label>Nuevo Estado</label>
+          <select id="nuevoEstado" class="form-control">
+            <option value="concretado">Concretado</option>
+            <option value="rechazado">Rechazado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Observación</label>
+          <textarea id="observacion" class="form-control"></textarea>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success" id="btnGuardarEstado">Guardar</button>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
 
@@ -136,7 +214,6 @@
     font-size: 14px;
   }
 
-  /* ===== TABLA ===== */
   .tabla-container {
     margin-top: 20px;
   }
@@ -168,7 +245,6 @@
     background-color: #f4f9ff;
   }
 
-  /* ===== RESPONSIVE FIX ===== */
   @media (max-width: 768px) {
     .dashboard-wrapper {
       padding: 10px;
@@ -185,6 +261,14 @@
     .tabla-modern {
       font-size: 12px;
     }
+  }
+
+  .kpi-yellow {
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+  }
+
+  .kpi-red {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
   }
 </style>
 
